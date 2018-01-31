@@ -1,0 +1,32 @@
+<!-- {% if latest_question_list %}
+    <ul>
+    {% for question in latest_question_list %}
+        <li><a href="{% url 'app:detail' question.id %}">{{ question.question_text }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %} -->
+
+{% if student_list %}
+    <table style="width:100%"  border="1px solid black">
+        <tr>
+            <th>index</th>
+            <th>ime</th>
+            <th>prezime</th>
+            <th>email</th>
+            <th>year</th>
+        </tr>
+    {% for student in student_list %}
+        <tr>
+            <th>{{ student.index }}</th>
+            <th>{{student.name}}</th>
+            <th>{{ student.surname}}</th>
+            <th>{{student.email}}</th>
+            <th>{{student.year}}</th>
+        </tr>
+    {% endfor %}
+    </table>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
